@@ -1,13 +1,13 @@
 version: 2
 jobs:
-  build-job:
+  build:
     docker:
       - image: ubuntu
     working_directory: /tmp/quotes-db-mongo
     steps:
       - run: echo "Running quotes-db-mongo"
 
-  deploy-job:
+  deploy:
     docker:
       - image: quotes-db-mongo
     working_directory: /tmp/quotes-db-mongo
@@ -20,6 +20,6 @@ workflows:
   version: 2
     deploy:
       jobs:
-        - build-job
-        - deploy-job
+        - build
+        - deploy
                   
