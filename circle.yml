@@ -1,5 +1,0 @@
-deployment:
-  production:
-    branch: master
-    commands:
-      - ./run.sh
