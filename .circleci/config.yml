@@ -1,25 +1,8 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: ubuntu
-    working_directory: /tmp/quotes-db-mongo
-    steps:
-      - run: echo "Running quotes-db-mongo"
-
-  deploy:
-    docker:
-      - image: quotes-db-mongo
-    working_directory: /tmp/quotes-db-mongo
-    steps:
-      - run:
-          name: Spin up db
-          command: ./run.sh
-
-workflows:
-  version: 2
-    deploy:
-      jobs:
-        - build
-        - deploy
-                  
+   build:
+     docker:
+       - image: circleci/mongo:latest
+     steps:
+       - checkout
+       - run: echo "hello world"
