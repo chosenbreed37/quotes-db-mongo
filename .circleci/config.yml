@@ -2,7 +2,7 @@ version: 2
 jobs:
    build:
      docker:
-       - image: circleci/mongo:latest
+       - image: circleci/node:7
      steps:
        - checkout
        - run: ssh -v $DROPLET_USER@$DROPLET_IP ./deploy.sh
