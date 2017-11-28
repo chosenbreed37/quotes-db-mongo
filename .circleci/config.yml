@@ -5,4 +5,4 @@ jobs:
        - image: circleci/mongo:latest
      steps:
        - checkout
-       - run: ssh -v $DROPLET_USER@$DROPLET_IP "./deploy.sh"
+       - run: ssh -v $DROPLET_USER@$DROPLET_IP ./deploy.sh
