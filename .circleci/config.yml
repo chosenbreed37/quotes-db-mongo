@@ -5,4 +5,5 @@ jobs:
        - image: circleci/node:7
      steps:
        - checkout
+       - run: ssh-keyscan $DROPLET_IP
        - run: ssh -v $DROPLET_USER@$DROPLET_IP ./deploy.sh  -o StrictHostKeyChecking=no
